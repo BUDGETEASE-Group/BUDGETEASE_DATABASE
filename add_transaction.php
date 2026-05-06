@@ -33,7 +33,15 @@ if (isset($_POST['add'])) {
         <option value="expense">Expense</option>
     </select><br>
 
-   
+    Category:
+    <select name="category">
+        <?php
+        $cat = $conn->query("SELECT * FROM categories");
+        while($row = $cat->fetch_assoc()) {
+            echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
+        }
+        ?>
+    </select><br>
 
     Date: <input type="date" name="date" required><br>
 
