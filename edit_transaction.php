@@ -15,15 +15,15 @@ $data = $result->fetch_assoc();
 // Update
 if (isset($_POST['update'])) {
     $amount = $_POST['amount'];
-    $type = $_POST['type'];
+    $type = $_POST['Type'];
     $category = $_POST['category'];
-    $date = $_POST['date'];
+    $date = $_POST['Date'];
 
     $conn->query("UPDATE transactions SET 
         amount='$amount',
-        type='$type',
+        Type='$Type',
         category_id='$category',
-        date='$date'
+        Date='$Date'
         WHERE transaction_id='$id'
     ");
 
@@ -34,12 +34,12 @@ if (isset($_POST['update'])) {
 <h2>Edit Transaction</h2>
 
 <form method="POST">
-    Amount: <input type="number" name="amount" value="<?= $data['amount'] ?>"><br>
+    Amount: <input Type="number" name="amount" value="<?= $Data['amount'] ?>"><br>
 
     Type:
-    <select name="type">
-        <option value="income" <?= $data['type']=='income'?'selected':'' ?>>Income</option>
-        <option value="expense" <?= $data['type']=='expense'?'selected':'' ?>>Expense</option>
+    <select name="Type">
+        <option value="income" <?= $Data['Type']=='income'?'selected':'' ?>>Income</option>
+        <option value="expense" <?= $Data['Type']=='expense'?'selected':'' ?>>Expense</option>
     </select><br>
 
     Category:
@@ -53,7 +53,7 @@ if (isset($_POST['update'])) {
         ?>
     </select><br>
 
-    Date: <input type="date" name="date" value="<?= $data['date'] ?>"><br>
+    Date: <input Type="Date" name="Date" value="<?= $Data['Date'] ?>"><br>
 
     <button name="update">Update</button>
 </form>

@@ -10,11 +10,11 @@ if (isset($_POST['add'])) {
     $user_id = $_SESSION['user_id'];
     $category_id = $_POST['category'];
     $amount = $_POST['amount'];
-    $type = $_POST['type'];
-    $date = $_POST['date'];
+    $Type = $_POST['Type'];
+    $Date = $_POST['Date'];
 
-    $sql = "INSERT INTO transactions (user_id, category_id, amount, type, date)
-            VALUES ('$user_id', '$category_id', '$amount', '$type', '$date')";
+    $sql = "INSERT INTO transactions (user_id, category_id, amount, Type, Date)
+            VALUES ('$user_id', '$category_id', '$amount', '$Type', '$Date')";
 
     $conn->query($sql);
 
@@ -25,10 +25,10 @@ if (isset($_POST['add'])) {
 <h2>Add Transaction</h2>
 
 <form method="POST">
-    Amount: <input type="number" name="amount" required><br>
-    
+    Amount: <input Type="number" name="amount" required><br>
+     
     Type:
-    <select name="type">
+    <select name="Type">
         <option value="income">Income</option>
         <option value="expense">Expense</option>
     </select><br>
@@ -43,7 +43,7 @@ if (isset($_POST['add'])) {
         ?>
     </select><br>
 
-    Date: <input type="date" name="date" required><br>
+    Date: <input Type="Date" name="Date" required><br>
 
     <button name="add">Add</button>
 </form>

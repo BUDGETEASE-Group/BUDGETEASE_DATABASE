@@ -41,3 +41,16 @@ $result = $conn->query($sql);
 </table>
 
 <a href="add_transaction.php">Add Transaction</a>
+
+<tr>
+    <td><?= $row['amount'] ?></td>
+    <td><?= $row['Type'] ?></td>
+    <td><?= $row['Category_Name'] ?></td>
+    <td><?= $row['Date'] ?></td>
+    <td>
+        <a href="edit_transaction.php?id=<?= $row['transaction_id'] ?>">Edit</a>
+        |
+        <a href="delete_transaction.php?id=<?= $row['transaction_id'] ?>" 
+           onclick="return confirm('Are you sure?')">Delete</a>
+    </td>
+</tr>
