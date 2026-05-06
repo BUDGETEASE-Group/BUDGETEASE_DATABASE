@@ -39,3 +39,5 @@ $result = $conn->query($sql);
 <?php endwhile; ?>
 
 </table>
+
+<a href="add_transaction.php">Add Transaction</a>
